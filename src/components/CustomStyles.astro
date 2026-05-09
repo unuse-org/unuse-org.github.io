@@ -1,6 +1,4 @@
 ---
-import '@fontsource-variable/inter';
-
 // 'DM Sans'
 // Nunito
 // Dosis
@@ -20,44 +18,46 @@ import '@fontsource-variable/inter';
 ---
 
 <style is:inline>
+  @import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Chakra+Petch:wght@500;600;700&display=swap');
+
   :root {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    --aw-font-serif: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    --aw-font-heading: 'Chakra Petch', 'Zen Kaku Gothic New', sans-serif;
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: rgb(255 122 34);
+    --aw-color-secondary: rgb(11 134 147);
+    --aw-color-accent: rgb(245 66 93);
 
-    --aw-color-text-heading: rgb(0 0 0);
-    --aw-color-text-default: rgb(16 16 16);
-    --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
+    --aw-color-text-heading: rgb(10 19 35);
+    --aw-color-text-default: rgb(23 34 47);
+    --aw-color-text-muted: rgb(23 34 47 / 66%);
+    --aw-color-bg-page: rgb(251 254 255);
 
-    --aw-color-bg-page-dark: rgb(3 6 32);
+    --aw-color-bg-page-dark: rgb(4 14 24);
 
     ::selection {
-      background-color: lavender;
+      background-color: rgb(255 210 182);
     }
   }
 
   .dark {
-    --aw-font-sans: 'Inter Variable';
-    --aw-font-serif: 'Inter Variable';
-    --aw-font-heading: 'Inter Variable';
+    --aw-font-sans: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    --aw-font-serif: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Noto Sans JP', sans-serif;
+    --aw-font-heading: 'Chakra Petch', 'Zen Kaku Gothic New', sans-serif;
 
-    --aw-color-primary: rgb(1 97 239);
-    --aw-color-secondary: rgb(1 84 207);
-    --aw-color-accent: rgb(109 40 217);
+    --aw-color-primary: rgb(255 140 49);
+    --aw-color-secondary: rgb(41 195 202);
+    --aw-color-accent: rgb(255 93 118);
 
-    --aw-color-text-heading: rgb(247, 248, 248);
-    --aw-color-text-default: rgb(229 236 246);
-    --aw-color-text-muted: rgb(229 236 246 / 66%);
-    --aw-color-bg-page: rgb(3 6 32);
+    --aw-color-text-heading: rgb(237 246 255);
+    --aw-color-text-default: rgb(216 228 239);
+    --aw-color-text-muted: rgb(216 228 239 / 66%);
+    --aw-color-bg-page: rgb(4 14 24);
 
     ::selection {
-      background-color: black;
-      color: snow;
+      background-color: rgb(255 122 34);
+      color: rgb(8 14 22);
     }
   }
 </style>

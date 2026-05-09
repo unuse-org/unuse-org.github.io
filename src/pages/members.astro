@@ -1,0 +1,48 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import type { Member } from '~/data/members';
+import { members } from '~/data/members';
+import defaultAvatar from '~/assets/images/wip.png';
+
+const metadata = { title: 'Members' };
+---
+
+<Layout metadata={metadata}>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16">
+    <h1 class="text-3xl font-bold mb-4">Members</h1>
+    <p class="text-muted mb-8">ununseのメンバー。</p>
+
+    <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      {
+        members.map((m: Member) => (
+          <article class="member-card rounded-lg border p-5 bg-white">
+            <div class="flex items-start gap-4">
+              <img src={m.avatar || defaultAvatar.src} alt={m.name} class="w-16 h-16 object-cover rounded-md" />
+              <div>
+                <h3 class="font-semibold">{m.name}</h3>
+                <div class="text-sm text-muted mb-2">{m.role}</div>
+                <p class="text-sm">{m.bio}</p>
+                {m.links?.length ? (
+                  <div class="mt-3 flex gap-2">
+                    {m.links.map((l) => (
+                      <a class="text-primary underline text-sm" href={l.href} target="_blank" rel="noopener">
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                ) : null}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .member-card {
+    border: 1px solid rgba(9, 35, 50, 0.06);
+    box-shadow: 0 8px 18px rgba(5, 18, 30, 0.04);
+  }
+</style>

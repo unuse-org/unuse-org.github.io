@@ -1,0 +1,65 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import { works } from '~/data/works';
+
+export function getStaticPaths() {
+  return works.map((work) => ({
+    params: { slug: work.slug },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+
+const metadata = {
+  title: work.title,
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="ununse-section max-w-4xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+    <a href="/works" class="text-sm text-primary hover:underline mb-6 inline-block">&larr; 作品一覧に戻る</a>
+
+    <div class="rounded-lg overflow-hidden border border-[rgba(11,93,112,0.16)] mb-8">
+      <img src={work.image.src} alt={work.title} class="w-full aspect-video object-cover" />
+    </div>
+
+    <div class="flex flex-wrap gap-2 mb-6">
+      {
+        work.tags.map((tag: string) => (
+          <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-[rgb(208,250,247)] text-[#0d6f7b] border border-[rgba(13,111,123,0.24)]">
+            {tag}
+          </span>
+        ))
+      }
+    </div>
+
+    <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight tracking-tight text-[#0f1f36]">{work.title}</h1>
+    <p class="text-lg leading-relaxed text-[#2a3f56] mb-8">{work.description}</p>
+
+    {
+      work.details && (
+        <div class="mb-8 border-t border-[rgba(11,93,112,0.12)] pt-6">
+          <h2 class="text-2xl font-semibold mb-3 text-[#0f1f36]">遊び方</h2>
+          <p class="text-[#2a3f56] leading-relaxed">{work.details}</p>
+        </div>
+      )
+    }
+
+    {
+      work.exhibitions && work.exhibitions.length > 0 && (
+        <div class="border-t border-[rgba(11,93,112,0.12)] pt-6">
+          <h2 class="text-2xl font-semibold mb-3 text-[#0f1f36]">展示履歴</h2>
+          <ul class="space-y-2 text-[#2a3f56]">
+            {work.exhibitions.map((ex: string) => (
+              <li class="flex items-start gap-2">
+                <span class="text-primary font-bold mt-1">•</span>
+                <span>{ex}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </section>
+</Layout>
