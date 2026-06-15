@@ -44,9 +44,10 @@ export const works: Work[] = [
   {
     slug: 'kanpai',
     title: '乾杯の音頭は破壊から',
-    description: '新作の情報は公開され次第こちらに追加していきます。続報をお待ちください。',
+    description: '実物のビールジョッキを振ってNPCと乾杯バトルを行う体感型アクションゲーム。',
     image: kanpaiImage,
-    tags: ['制作中'],
-    details: '新作の情報は公開され次第こちらに追加していきます。続報をお待ちください。',
+    tags: ['乾杯'],
+    details: 'タイミングよくビールジョッキを振って上司のビールジョッキを破壊しよう。',
+    exhibitions: ['BitSummit 2026'],
   },
 ];
