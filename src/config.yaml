@@ -16,9 +16,10 @@ metadata:
   openGraph:
     site_name: ununse
     images:
-      - url: '~/assets/images/hero-cube.png'
+      - url: '~/assets/images/ogp.png'
         width: 1200
-        height: 628
+        height: 630
+    locale: ja_JP
     type: website
   twitter:
     handle: '@ununse'
@@ -26,7 +27,7 @@ metadata:
     cardType: summary_large_image
 
 i18n:
-  language: en
+  language: ja
   textDirection: ltr
 
 apps:
