@@ -31,7 +31,7 @@ export interface Post {
   author?: string;
 
   /**  */
-  metadata?: MetaData;
+  metadata?: Metadata;
 
   /**  */
   draft?: boolean;
@@ -49,40 +49,40 @@ export interface Taxonomy {
   title: string;
 }
 
-export interface MetaData {
+export interface Metadata {
   title?: string;
   ignoreTitleTemplate?: boolean;
 
   canonical?: string;
 
-  robots?: MetaDataRobots;
+  robots?: MetadataRobots;
 
   description?: string;
 
-  openGraph?: MetaDataOpenGraph;
-  twitter?: MetaDataTwitter;
+  openGraph?: MetadataOpenGraph;
+  twitter?: MetadataTwitter;
 }
 
-export interface MetaDataRobots {
+export interface MetadataRobots {
   index?: boolean;
   follow?: boolean;
 }
 
-export interface MetaDataImage {
+export interface MetadataImage {
   url: string;
   width?: number;
   height?: number;
 }
 
-export interface MetaDataOpenGraph {
+export interface MetadataOpenGraph {
   url?: string;
   siteName?: string;
-  images?: Array<MetaDataImage>;
+  images?: Array<MetadataImage>;
   locale?: string;
   type?: string;
 }
 
-export interface MetaDataTwitter {
+export interface MetadataTwitter {
   handle?: string;
   site?: string;
   cardType?: string;

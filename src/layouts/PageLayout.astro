@@ -5,10 +5,10 @@ import Footer from '~/components/widgets/Footer.astro';
 
 import { headerData, footerData } from '~/navigation';
 
-import type { MetaData } from '~/types';
+import type { Metadata } from '~/types';
 
 export interface Props {
-  metadata?: MetaData;
+  metadata?: Metadata;
 }
 
 const { metadata } = Astro.props;

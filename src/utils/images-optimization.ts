@@ -215,10 +215,13 @@ const getBreakpoints = ({
 export const astroAssetsOptimizer: ImagesOptimizer = async (
   image,
   breakpoints,
-  _width,
-  _height,
+  sourceWidth,
+  sourceHeight,
   format = undefined
 ) => {
+  void sourceWidth;
+  void sourceHeight;
+
   if (!image) {
     return [];
   }
@@ -253,19 +256,19 @@ export const unpicOptimizer: ImagesOptimizer = async (image, breakpoints, width,
 
   return Promise.all(
     breakpoints.map(async (w: number) => {
-      const _height = width && height ? computeHeight(w, width / height) : height;
+      const optimizedHeight = width && height ? computeHeight(w, width / height) : height;
       const url =
         transformUrl({
           url: image,
           width: w,
-          height: _height,
+          height: optimizedHeight,
           cdn: urlParsed.cdn,
           ...(format ? { format: format } : {}),
         }) || image;
       return {
         src: String(url),
         width: w,
-        height: _height,
+        height: optimizedHeight,
       };
     })
   );
@@ -275,7 +278,7 @@ export const unpicOptimizer: ImagesOptimizer = async (image, breakpoints, width,
 export async function getImagesOptimized(
   image: ImageMetadata | string,
   {
-    src: _,
+    src: ignoredSource,
     width,
     height,
     sizes,
@@ -289,6 +292,8 @@ export async function getImagesOptimized(
   }: ImageProps,
   transform: ImagesOptimizer = () => Promise.resolve([])
 ): Promise<{ src: string; attributes: HTMLAttributes<'img'> }> {
+  void ignoredSource;
+
   if (typeof image !== 'string') {
     width ||= Number(image.width) || undefined;
     height ||= typeof width === 'number' ? computeHeight(width, image.width / image.height) : undefined;

@@ -2,15 +2,15 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { works } from '~/data/works';
 
-import cubeDePonImage from '~/assets/images/hero-cube.png';
-import cinemaImage from '~/assets/images/hero-cinema.png';
-import beerhythmImage from '~/assets/images/hero-beerhythm.png';
+import beerhythmHeroImage from '~/assets/images/hero-beerhythm.png';
+import cinemaOperatorHeroImage from '~/assets/images/hero-cinema-operator.png';
+import cubeDePonHeroImage from '~/assets/images/hero-cube-de-pon.png';
 import Contact from '~/components/Contact.astro';
 
 const heroImages = [
-  { src: cubeDePonImage, alt: 'キューブでポン' },
-  { src: beerhythmImage, alt: 'ビアリズム' },
-  { src: cinemaImage, alt: 'シネマオペレーター' },
+  { src: cubeDePonHeroImage, alt: 'キューブでポン' },
+  { src: beerhythmHeroImage, alt: 'ビアリズム' },
+  { src: cinemaOperatorHeroImage, alt: 'シネマオペレーター' },
 ];
 const featuredWorks = works.slice(0, 3);
 

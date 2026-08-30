@@ -1,10 +1,15 @@
 ---
 import { SITE } from 'astrowind:config';
-import logoImage from '~/assets/images/unuse.jpg';
+import ununseLogoImage from '~/assets/images/logo-ununse.jpg';
 ---
 
 <span class="logo-mark" aria-label={SITE?.name}>
-  <img src={logoImage.src} width={logoImage.width} height={logoImage.height} alt={`${SITE?.name ?? 'ununse'} logo`} />
+  <img
+    src={ununseLogoImage.src}
+    width={ununseLogoImage.width}
+    height={ununseLogoImage.height}
+    alt={`${SITE?.name ?? 'ununse'} logo`}
+  />
 </span>
 
 <style>

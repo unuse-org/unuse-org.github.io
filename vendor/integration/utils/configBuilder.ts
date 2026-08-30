@@ -1,10 +1,10 @@
 import merge from 'lodash.merge';
 
-import type { MetaData } from '~/types';
+import type { Metadata } from '~/types';
 
 export type Config = {
   site?: SiteConfig;
-  metadata?: MetaDataConfig;
+  metadata?: MetadataConfig;
   i18n?: I18NConfig;
   apps?: {
     blog?: AppBlogConfig;
@@ -20,7 +20,7 @@ export interface SiteConfig {
   trailingSlash?: boolean;
   googleSiteVerificationId?: string;
 }
-export interface MetaDataConfig extends Omit<MetaData, 'title'> {
+export interface MetadataConfig extends Omit<Metadata, 'title'> {
   title?: {
     default: string;
     template: string;
@@ -85,7 +85,7 @@ export interface UIConfig {
 const DEFAULT_SITE_NAME = 'Website';
 
 const getSite = (config: Config) => {
-  const _default = {
+  const defaultConfig = {
     name: DEFAULT_SITE_NAME,
     site: undefined,
     base: '/',
@@ -94,13 +94,13 @@ const getSite = (config: Config) => {
     googleSiteVerificationId: '',
   };
 
-  return merge({}, _default, config?.site ?? {}) as SiteConfig;
+  return merge({}, defaultConfig, config?.site ?? {}) as SiteConfig;
 };
 
 const getMetadata = (config: Config) => {
   const siteConfig = getSite(config);
 
-  const _default = {
+  const defaultConfig = {
     title: {
       default: siteConfig?.name || DEFAULT_SITE_NAME,
       template: '%s',
@@ -115,22 +115,22 @@ const getMetadata = (config: Config) => {
     },
   };
 
-  return merge({}, _default, config?.metadata ?? {}) as MetaDataConfig;
+  return merge({}, defaultConfig, config?.metadata ?? {}) as MetadataConfig;
 };
 
 const getI18N = (config: Config) => {
-  const _default = {
+  const defaultConfig = {
     language: 'en',
     textDirection: 'ltr',
   };
 
-  const value = merge({}, _default, config?.i18n ?? {});
+  const value = merge({}, defaultConfig, config?.i18n ?? {});
 
   return value as I18NConfig;
 };
 
 const getAppBlog = (config: Config) => {
-  const _default = {
+  const defaultConfig = {
     isEnabled: false,
     postsPerPage: 6,
     isRelatedPostsEnabled: false,
@@ -169,19 +169,19 @@ const getAppBlog = (config: Config) => {
     },
   };
 
-  return merge({}, _default, config?.apps?.blog ?? {}) as AppBlogConfig;
+  return merge({}, defaultConfig, config?.apps?.blog ?? {}) as AppBlogConfig;
 };
 
 const getUI = (config: Config) => {
-  const _default = {
+  const defaultConfig = {
     theme: 'system',
   };
 
-  return merge({}, _default, config?.ui ?? {});
+  return merge({}, defaultConfig, config?.ui ?? {});
 };
 
 const getAnalytics = (config: Config) => {
-  const _default = {
+  const defaultConfig = {
     vendors: {
       googleAnalytics: {
         id: undefined,
@@ -190,7 +190,7 @@ const getAnalytics = (config: Config) => {
     },
   };
 
-  return merge({}, _default, config?.analytics ?? {}) as AnalyticsConfig;
+  return merge({}, defaultConfig, config?.analytics ?? {}) as AnalyticsConfig;
 };
 
 export default (config: Config) => ({

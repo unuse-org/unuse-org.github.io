@@ -16,7 +16,7 @@ metadata:
   openGraph:
     site_name: ununse
     images:
-      - url: '~/assets/images/ogp.png'
+      - url: '~/assets/images/og-default.png'
         width: 1200
         height: 630
     locale: ja_JP

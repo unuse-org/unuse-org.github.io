@@ -2,7 +2,7 @@
 import Layout from '~/layouts/PageLayout.astro';
 import type { Member } from '~/data/members';
 import { members } from '~/data/members';
-import defaultAvatar from '~/assets/images/wip.png';
+import placeholderAvatarImage from '~/assets/images/placeholder-avatar.png';
 
 const metadata = { title: 'Members' };
 ---
@@ -17,7 +17,11 @@ const metadata = { title: 'Members' };
         members.map((m: Member) => (
           <article class="member-card rounded-lg border p-5 bg-white">
             <div class="flex items-start gap-4">
-              <img src={m.avatar || defaultAvatar.src} alt={m.name} class="w-16 h-16 object-cover rounded-md" />
+              <img
+                src={m.avatar || placeholderAvatarImage.src}
+                alt={m.name}
+                class="w-16 h-16 object-cover rounded-md"
+              />
               <div>
                 <h3 class="font-semibold">{m.name}</h3>
                 <div class="text-sm text-muted mb-2">{m.role}</div>

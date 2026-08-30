@@ -37,18 +37,18 @@ if (!props.decoding) {
   props.decoding = 'async';
 }
 
-const _image = await findImage(props.src);
+const sourceImage = await findImage(props.src);
 
 let image: ImageType | undefined = undefined;
 
 if (
-  typeof _image === 'string' &&
-  (_image.startsWith('http://') || _image.startsWith('https://')) &&
-  isUnpicCompatible(_image)
+  typeof sourceImage === 'string' &&
+  (sourceImage.startsWith('http://') || sourceImage.startsWith('https://')) &&
+  isUnpicCompatible(sourceImage)
 ) {
-  image = await getImagesOptimized(_image, props, unpicOptimizer);
-} else if (_image) {
-  image = await getImagesOptimized(_image, props, astroAssetsOptimizer);
+  image = await getImagesOptimized(sourceImage, props, unpicOptimizer);
+} else if (sourceImage) {
+  image = await getImagesOptimized(sourceImage, props, astroAssetsOptimizer);
 }
 ---
 

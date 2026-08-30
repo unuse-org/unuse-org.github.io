@@ -51,9 +51,40 @@ export default [
         },
       ],
       '@typescript-eslint/no-non-null-assertion': 'off',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'variable',
+          filter: {
+            regex: '^WrapperTag$',
+            match: false,
+          },
+          format: ['camelCase', 'UPPER_CASE'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+        },
+        {
+          selector: 'variable',
+          filter: {
+            regex: '^WrapperTag$',
+            match: true,
+          },
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'function',
+          format: ['camelCase'],
+          leadingUnderscore: 'forbid',
+          trailingUnderscore: 'forbid',
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+      ],
     },
   },
   {
-    ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro'],
+    ignores: ['dist', 'node_modules', '.github', 'types.generated.d.ts', '.astro', 'vendor'],
   },
 ];

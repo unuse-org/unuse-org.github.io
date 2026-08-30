@@ -15,12 +15,12 @@ const load = async function () {
   return images;
 };
 
-let _images: Record<string, () => Promise<unknown>> | undefined = undefined;
+let cachedImages: Record<string, () => Promise<unknown>> | undefined = undefined;
 
 /** */
 export const fetchLocalImages = async () => {
-  _images = _images || (await load());
-  return _images;
+  cachedImages = cachedImages || (await load());
+  return cachedImages;
 };
 
 /** */
@@ -73,27 +73,36 @@ export const adaptOpenGraphImages = async (
           };
         }
 
-        let _image: OptimizedImage | undefined;
+        let optimizedImage: OptimizedImage | undefined;
 
         if (
           typeof resolvedImage === 'string' &&
           (resolvedImage.startsWith('http://') || resolvedImage.startsWith('https://')) &&
           isUnpicCompatible(resolvedImage)
         ) {
-          _image = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0];
+          optimizedImage = (await unpicOptimizer(resolvedImage, [defaultWidth], defaultWidth, defaultHeight, 'jpg'))[0];
         } else if (resolvedImage) {
           const dimensions =
             typeof resolvedImage !== 'string' && resolvedImage?.width <= defaultWidth
               ? [resolvedImage?.width, resolvedImage?.height]
               : [defaultWidth, defaultHeight];
-          _image = (await astroAssetsOptimizer(resolvedImage, [dimensions[0]], dimensions[0], dimensions[1], 'jpg'))[0];
+          optimizedImage = (
+            await astroAssetsOptimizer(resolvedImage, [dimensions[0]], dimensions[0], dimensions[1], 'jpg')
+          )[0];
         }
 
-        if (typeof _image === 'object') {
+        if (typeof optimizedImage === 'object') {
           return {
-            url: 'src' in _image && typeof _image.src === 'string' ? String(new URL(_image.src, astroSite)) : '',
-            width: 'width' in _image && typeof _image.width === 'number' ? _image.width : undefined,
-            height: 'height' in _image && typeof _image.height === 'number' ? _image.height : undefined,
+            url:
+              'src' in optimizedImage && typeof optimizedImage.src === 'string'
+                ? String(new URL(optimizedImage.src, astroSite))
+                : '',
+            width:
+              'width' in optimizedImage && typeof optimizedImage.width === 'number' ? optimizedImage.width : undefined,
+            height:
+              'height' in optimizedImage && typeof optimizedImage.height === 'number'
+                ? optimizedImage.height
+                : undefined,
           };
         }
         return {
