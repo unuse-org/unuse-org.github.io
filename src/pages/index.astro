@@ -58,6 +58,9 @@ const metadata = {
       <p>Concept</p>
       <h2>手に取った瞬間が、<br />ゲームの始まり。</h2>
     </div>
+    <p class="ununse-concept-intro">
+      ununseは大学発の同人ゲームサークルです。日常のモノをあえてコントローラーに変えたゲームを制作しています。
+    </p>
     <div class="ununse-concept-grid">
       <article>
         <h3>予想外から始まる</h3>
@@ -90,17 +93,6 @@ const metadata = {
     </div>
     <div class="pt-4">
       <a href="/works" class="btn btn-secondary">すべての作品を見る</a>
-    </div>
-  </section>
-
-  <section id="about" class="ununse-section ununse-about max-w-7xl mx-auto px-4 sm:px-6 pb-20">
-    <div class="ununse-about__panel">
-      <h2>About ununse</h2>
-      <p>ununseは大学発の同人ゲームサークルです。日常のモノをあえてコントローラーに変えたゲームを制作しています。</p>
-      <ul>
-        <li><strong>設立:</strong> 2020年</li>
-        <li><strong>メンバー:</strong> 6名</li>
-      </ul>
     </div>
   </section>
 
@@ -261,6 +253,14 @@ const metadata = {
     grid-template-columns: 1fr;
   }
 
+  .ununse-concept-intro {
+    max-width: 48rem;
+    margin-top: 1.25rem;
+    color: #2a3f56;
+    font-size: 1.03rem;
+    line-height: 1.9;
+  }
+
   .ununse-concept-grid article {
     border-radius: 1rem;
     border: 1px solid rgba(12, 124, 136, 0.22);
@@ -324,32 +324,6 @@ const metadata = {
     font-size: 0.93rem;
     line-height: 1.75;
     margin: 0;
-  }
-
-  .ununse-about__panel {
-    border-radius: 1rem;
-    border: 1px solid rgba(8, 81, 106, 0.24);
-    background: linear-gradient(120deg, rgba(11, 28, 50, 1) 0%, rgba(9, 50, 74, 1) 100%);
-    color: #eaf7ff;
-    padding: 1.35rem;
-    box-shadow: 0 18px 34px rgba(3, 14, 30, 0.22);
-  }
-
-  .ununse-about__panel h2 {
-    font-size: clamp(1.45rem, 2.5vw, 2rem);
-    margin-bottom: 0.65rem;
-  }
-
-  .ununse-about__panel p {
-    line-height: 1.88;
-    color: rgba(236, 246, 255, 0.88);
-  }
-
-  .ununse-about__panel ul {
-    margin-top: 0.8rem;
-    display: grid;
-    gap: 0.25rem;
-    color: rgba(236, 246, 255, 0.95);
   }
 
   @media (min-width: 900px) {
