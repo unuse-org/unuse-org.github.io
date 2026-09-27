@@ -16,7 +16,7 @@
 ## Assets and CSS
 
 - Asset filenames use lowercase kebab-case in the form `{purpose}-{subject}.{extension}`: `hero-cube-de-pon.png`.
-- CSS classes use lowercase BEM naming: `ununse-screen__image`.
+- CSS classes use lowercase BEM naming: `unuse-screen__image`.
 
 ## Compatibility exceptions
 

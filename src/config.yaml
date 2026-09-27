@@ -1,5 +1,5 @@
 site:
-  name: ununse
+  name: unuse
   site: 'https://unuse.jp'
   base: '/'
   trailingSlash: false
@@ -7,14 +7,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: ununse
-    template: '%s - ununse'
-  description: 'ununse - 同人ゲームサークル'
+    default: unuse
+    template: '%s - unuse'
+  description: 'unuse - 同人ゲームサークル'
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: ununse
+    site_name: unuse
     images:
       - url: '~/assets/images/og-default.png'
         width: 1200
@@ -22,8 +22,8 @@ metadata:
     locale: ja_JP
     type: website
   twitter:
-    handle: '@ununse'
-    site: '@ununse'
+    handle: '@unuse'
+    site: '@unuse'
     cardType: summary_large_image
 
 i18n:

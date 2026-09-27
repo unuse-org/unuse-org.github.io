@@ -15,36 +15,36 @@ const heroImages = [
 const featuredWorks = works.slice(0, 3);
 
 const metadata = {
-  title: 'ununse',
+  title: 'unuse',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <section class="ununse-hero">
-    <div class="ununse-hero__glow ununse-hero__glow-a" aria-hidden="true"></div>
-    <div class="ununse-hero__glow ununse-hero__glow-b" aria-hidden="true"></div>
-    <div class="ununse-hero__mesh" aria-hidden="true"></div>
+  <section class="unuse-hero">
+    <div class="unuse-hero__glow unuse-hero__glow-a" aria-hidden="true"></div>
+    <div class="unuse-hero__glow unuse-hero__glow-b" aria-hidden="true"></div>
+    <div class="unuse-hero__mesh" aria-hidden="true"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20 lg:py-24 relative">
-      <div class="ununse-hero__layout">
+      <div class="unuse-hero__layout">
         <div>
           <h1>
             ふだん使うものが、<br />
             ゲームになる。
           </h1>
-          <p class="ununse-lead">ununseは、日常のモノをあえてゲームのコントローラーに変える同人ゲームサークル。</p>
-          <div class="ununse-actions">
+          <p class="unuse-lead">unuseは、日常のモノをあえてゲームのコントローラーに変える同人ゲームサークル。</p>
+          <div class="unuse-actions">
             <a href="#concept" class="btn btn-primary">コンセプトを見る</a>
-            <a href="/works" class="btn btn-secondary ununse-btn-ghost">作品を見る</a>
+            <a href="/works" class="btn btn-secondary unuse-btn-ghost">作品を見る</a>
           </div>
         </div>
-        <div class="ununse-screen" aria-hidden="true">
+        <div class="unuse-screen" aria-hidden="true">
           {
             heroImages.map((img) => (
               <img
                 src={typeof img.src === 'string' ? img.src : img.src.src}
                 alt={img.alt}
-                class="ununse-screen__image"
+                class="unuse-screen__image"
               />
             ))
           }
@@ -53,15 +53,15 @@ const metadata = {
     </div>
   </section>
 
-  <section id="concept" class="ununse-section max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
-    <div class="ununse-headline">
+  <section id="concept" class="unuse-section max-w-7xl mx-auto px-4 sm:px-6 py-16 md:py-20">
+    <div class="unuse-headline">
       <p>Concept</p>
       <h2>手に取った瞬間が、<br />ゲームの始まり。</h2>
     </div>
-    <p class="ununse-concept-intro">
-      ununseは大学発の同人ゲームサークルです。日常のモノをあえてコントローラーに変えたゲームを制作しています。
+    <p class="unuse-concept-intro">
+      unuseは大学発の同人ゲームサークルです。日常のモノをあえてコントローラーに変えたゲームを制作しています。
     </p>
-    <div class="ununse-concept-grid">
+    <div class="unuse-concept-grid">
       <article>
         <h3>予想外から始まる</h3>
         <p>「なぜこれで？」という驚き。その戸惑いが、ゲームへの没入の入口になります。</p>
@@ -73,15 +73,15 @@ const metadata = {
     </div>
   </section>
 
-  <section class="ununse-section ununse-works max-w-7xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
-    <div class="ununse-headline">
+  <section class="unuse-section unuse-works max-w-7xl mx-auto px-4 sm:px-6 pb-16 md:pb-20">
+    <div class="unuse-headline">
       <p>Featured Works</p>
       <h2>制作したゲーム</h2>
     </div>
-    <div class="ununse-works-grid">
+    <div class="unuse-works-grid">
       {
         featuredWorks.map((work) => (
-          <a href={`/works/${work.slug}`} class="ununse-work-card">
+          <a href={`/works/${work.slug}`} class="unuse-work-card">
             <img src={work.image.src} alt={work.title} loading="lazy" />
             <div>
               <h3>{work.title}</h3>
@@ -98,7 +98,7 @@ const metadata = {
 
   <!-- Contact -->
   <Contact
-    email="ununse.org@gmail.com"
+    email="unuse.org@gmail.com"
     social={[
       { label: 'Twitter（X）', href: 'https://x.com/UNUSE_AIT' },
       { label: 'Github', href: 'https://github.com/unuse-org' },
@@ -107,7 +107,7 @@ const metadata = {
 </Layout>
 
 <style>
-  .ununse-hero {
+  .unuse-hero {
     position: relative;
     overflow: hidden;
     background:
@@ -116,14 +116,14 @@ const metadata = {
       linear-gradient(180deg, #f6fbff 0%, #eef6ff 42%, #f8fbff 100%);
   }
 
-  .ununse-hero__layout {
+  .unuse-hero__layout {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
     align-items: center;
   }
 
-  .ununse-hero h1 {
+  .unuse-hero h1 {
     font-size: clamp(2.1rem, 4.7vw, 4.1rem);
     line-height: 1.06;
     letter-spacing: -0.03em;
@@ -132,33 +132,33 @@ const metadata = {
     color: #0b1830;
   }
 
-  .ununse-lead {
+  .unuse-lead {
     max-width: 620px;
     line-height: 1.95;
     color: #2a3f56;
     font-size: 1.03rem;
   }
 
-  .ununse-actions {
+  .unuse-actions {
     margin-top: 1.25rem;
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
   }
 
-  .ununse-btn-ghost {
+  .unuse-btn-ghost {
     border-color: #0d6f7b;
     color: #0d6f7b;
     background: rgba(255, 255, 255, 0.68);
   }
 
-  .ununse-btn-ghost:hover {
+  .unuse-btn-ghost:hover {
     background: #dff7f5;
     border-color: #0a5560;
     color: #0a5560;
   }
 
-  .ununse-screen {
+  .unuse-screen {
     position: relative;
     width: 100%;
     aspect-ratio: 1080 / 608;
@@ -169,7 +169,7 @@ const metadata = {
     background: #000;
   }
 
-  .ununse-screen__image {
+  .unuse-screen__image {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -180,19 +180,19 @@ const metadata = {
     animation: crossfade 15s ease-in-out infinite;
   }
 
-  .ununse-screen__image:nth-child(1) {
+  .unuse-screen__image:nth-child(1) {
     animation-delay: 0s;
   }
 
-  .ununse-screen__image:nth-child(2) {
+  .unuse-screen__image:nth-child(2) {
     animation-delay: 5s;
   }
 
-  .ununse-screen__image:nth-child(3) {
+  .unuse-screen__image:nth-child(3) {
     animation-delay: 10s;
   }
 
-  .ununse-hero__mesh {
+  .unuse-hero__mesh {
     position: absolute;
     inset: 0;
     background-image:
@@ -204,14 +204,14 @@ const metadata = {
     pointer-events: none;
   }
 
-  .ununse-hero__glow {
+  .unuse-hero__glow {
     position: absolute;
     border-radius: 9999px;
     filter: blur(4px);
     pointer-events: none;
   }
 
-  .ununse-hero__glow-a {
+  .unuse-hero__glow-a {
     width: 40vw;
     height: 40vw;
     min-width: 260px;
@@ -221,7 +221,7 @@ const metadata = {
     background: radial-gradient(circle at center, rgba(255, 122, 34, 0.32) 0%, rgba(255, 122, 34, 0) 68%);
   }
 
-  .ununse-hero__glow-b {
+  .unuse-hero__glow-b {
     width: 36vw;
     height: 36vw;
     min-width: 220px;
@@ -231,11 +231,11 @@ const metadata = {
     background: radial-gradient(circle at center, rgba(23, 195, 190, 0.34) 0%, rgba(23, 195, 190, 0) 70%);
   }
 
-  .ununse-section {
+  .unuse-section {
     position: relative;
   }
 
-  .ununse-headline p {
+  .unuse-headline p {
     font-size: 0.76rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -243,7 +243,7 @@ const metadata = {
     font-weight: 800;
   }
 
-  .ununse-headline h2 {
+  .unuse-headline h2 {
     margin-top: 0.5rem;
     font-size: clamp(1.7rem, 3.4vw, 2.8rem);
     line-height: 1.18;
@@ -251,14 +251,14 @@ const metadata = {
     color: #0f1f36;
   }
 
-  .ununse-concept-grid {
+  .unuse-concept-grid {
     margin-top: 1.4rem;
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr;
   }
 
-  .ununse-concept-intro {
+  .unuse-concept-intro {
     max-width: 48rem;
     margin-top: 1.25rem;
     color: #2a3f56;
@@ -266,7 +266,7 @@ const metadata = {
     line-height: 1.9;
   }
 
-  .ununse-concept-grid article {
+  .unuse-concept-grid article {
     border-radius: 1rem;
     border: 1px solid rgba(12, 124, 136, 0.22);
     background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(240, 251, 251, 1) 100%);
@@ -274,24 +274,24 @@ const metadata = {
     box-shadow: 0 12px 24px rgba(4, 24, 40, 0.08);
   }
 
-  .ununse-concept-grid h3 {
+  .unuse-concept-grid h3 {
     font-size: 1.08rem;
     margin-bottom: 0.45rem;
   }
 
-  .ununse-concept-grid p {
+  .unuse-concept-grid p {
     line-height: 1.8;
     color: #395067;
   }
 
-  .ununse-works-grid {
+  .unuse-works-grid {
     margin-top: 1.3rem;
     display: grid;
     grid-template-columns: 1fr;
     gap: 1rem;
   }
 
-  .ununse-work-card {
+  .unuse-work-card {
     display: grid;
     grid-template-columns: 120px 1fr;
     gap: 0.85rem;
@@ -305,12 +305,12 @@ const metadata = {
       box-shadow 220ms ease;
   }
 
-  .ununse-work-card:hover {
+  .unuse-work-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 16px 28px rgba(7, 30, 48, 0.12);
   }
 
-  .ununse-work-card img {
+  .unuse-work-card img {
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
@@ -318,13 +318,13 @@ const metadata = {
     border: 1px solid rgba(9, 23, 43, 0.1);
   }
 
-  .ununse-work-card h3 {
+  .unuse-work-card h3 {
     font-size: 1.05rem;
     color: #091c33;
     margin-bottom: 0.2rem;
   }
 
-  .ununse-work-card p {
+  .unuse-work-card p {
     color: #415872;
     font-size: 0.93rem;
     line-height: 1.75;
@@ -332,22 +332,22 @@ const metadata = {
   }
 
   @media (min-width: 900px) {
-    .ununse-hero__layout {
+    .unuse-hero__layout {
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
       gap: 2.1rem;
     }
 
-    .ununse-concept-grid {
+    .unuse-concept-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.15rem;
     }
 
-    .ununse-works-grid {
+    .unuse-works-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
     }
 
-    .ununse-work-card {
+    .unuse-work-card {
       grid-template-columns: 1fr;
       align-items: start;
     }

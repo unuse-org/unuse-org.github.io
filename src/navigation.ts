@@ -41,6 +41,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/unuse-org' },
   ],
   footNote: `
-    &copy; ununse. All rights reserved.
+    &copy; unuse. All rights reserved.
   `,
 };
